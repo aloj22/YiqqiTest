@@ -1,4 +1,4 @@
-package com.yiqqi.beers.data.di
+package com.yiqqi.beers.di
 
 import com.yiqqi.beers.data.BeerRepository
 import com.yiqqi.beers.data.impl.BeerRepositoryImpl

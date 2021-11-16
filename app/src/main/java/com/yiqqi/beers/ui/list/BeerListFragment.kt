@@ -45,7 +45,7 @@ class BeerListFragment : Fragment() {
         binding.run {
             beersRecyclerView.run {
                 adapter = beerAdapter
-                val divider = resources.getDimensionPixelSize(R.dimen.default_dimen)
+                val divider = resources.getDimensionPixelSize(R.dimen.margin_default)
                 val spanCount = (layoutManager as? GridLayoutManager)?.spanCount ?: 1
                 setItemOffset { rect, position, _ ->
                     val isRightEdge = position % spanCount == spanCount - 1

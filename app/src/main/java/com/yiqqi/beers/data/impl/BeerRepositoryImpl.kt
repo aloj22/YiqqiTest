@@ -10,6 +10,13 @@ class BeerRepositoryImpl(
     private val networkSource: NetworkSource
 ) : BeerRepository {
 
+
+    override fun getBeer(beerId: Long): Flow<Beer?> = flow {
+
+        emit(networkSource.getBeer(beerId))
+
+    }
+
     override fun getBeers(): Flow<List<Beer>> = flow {
 
         //TODO review this

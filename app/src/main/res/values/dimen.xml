@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <dimen name="default_dimen">12dp</dimen>
-    <dimen name="beer_list_image_height">160dp</dimen>
-
-</resources>

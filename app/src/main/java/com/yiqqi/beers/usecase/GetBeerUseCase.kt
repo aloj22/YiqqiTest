@@ -1,12 +1,10 @@
-package com.yiqqi.beers.data
+package com.yiqqi.beers.usecase
 
 import com.yiqqi.beers.domain.Beer
 import kotlinx.coroutines.flow.Flow
 
-interface BeerRepository {
+interface GetBeerUseCase {
 
     fun getBeer(beerId: Long): Flow<Beer?>
-
-    fun getBeers(): Flow<List<Beer>>
 
 }

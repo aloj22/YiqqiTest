@@ -1,6 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_default">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/beer_detail_image_height"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/name"
+            style="@style/Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:gravity="center_horizontal"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            tools:text="Pilsen Lager" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tagline"
+            style="@style/Tagline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_big"
+            android:gravity="center_horizontal"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            tools:text="Post Modern Classic. Spiky. Tropical. Hoppy." />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/description"
+            style="@style/Content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:gravity="center_horizontal"
+            app:layout_constraintTop_toBottomOf="@id/tagline"
+            tools:text="Our flagship beer that kick started the craft beer revolution. This is James and Martin's original take on an American IPA, subverted with punchy New Zealand hops. Layered with new world hops to create an all-out riot of grapefruit, pineapple and lychee before a spiky, mouth-puckering bitter finish." />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/abv_title"
+            style="@style/Title.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_big"
+            android:text="@string/abv"
+            app:layout_constraintEnd_toStartOf="@id/ibu_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ibu_title"
+            style="@style/Title.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ibu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/abv_title"
+            app:layout_constraintTop_toTopOf="@id/abv_title" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/abv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Content"
+            app:layout_constraintTop_toBottomOf="@id/abv_title"
+            app:layout_constraintStart_toStartOf="@id/abv_title"
+            app:layout_constraintEnd_toEndOf="@id/abv_title"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ibu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Content"
+            app:layout_constraintTop_toBottomOf="@id/ibu_title"
+            app:layout_constraintStart_toStartOf="@id/ibu_title"
+            app:layout_constraintEnd_toEndOf="@id/ibu_title"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

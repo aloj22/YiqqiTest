@@ -4,6 +4,8 @@ import com.yiqqi.beers.domain.Beer
 
 interface NetworkSource {
 
+    suspend fun getBeer(beerId: Long): Beer?
+
     suspend fun getBeers(page: Int, count: Int): List<Beer>
 
 }
