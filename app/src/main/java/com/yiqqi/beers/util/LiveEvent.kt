@@ -1,4 +1,4 @@
-package com.yiqqi.test.util
+package com.yiqqi.beers.util
 
 import androidx.annotation.MainThread
 import androidx.collection.ArraySet

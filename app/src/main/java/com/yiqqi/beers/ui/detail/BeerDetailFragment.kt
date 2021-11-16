@@ -1,4 +1,4 @@
-package com.yiqqi.test.ui.detail
+package com.yiqqi.beers.ui.detail
 
 import androidx.fragment.app.Fragment
 

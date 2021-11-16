@@ -1,4 +1,4 @@
-package com.yiqqi.test.util
+package com.yiqqi.beers.util
 
 import android.graphics.Rect
 import androidx.recyclerview.widget.RecyclerView

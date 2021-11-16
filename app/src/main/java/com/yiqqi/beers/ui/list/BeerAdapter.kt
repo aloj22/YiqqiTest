@@ -1,12 +1,12 @@
-package com.yiqqi.test.ui.list
+package com.yiqqi.beers.ui.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.yiqqi.test.databinding.ViewItemBeerBinding
-import com.yiqqi.test.domain.Beer
+import com.yiqqi.beers.databinding.ViewItemBeerBinding
+import com.yiqqi.beers.domain.Beer
 
 class BeerAdapter(
     private val beers: MutableList<Beer> = mutableListOf(),
@@ -54,6 +54,7 @@ class BeerAdapter(
         fun bind(beer: Beer) {
             binding.run {
 
+                name.text = beer.name
                 tagline.text = beer.tagline
 
                 Glide.with(image)

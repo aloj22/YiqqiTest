@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/beer_list"
-        android:name="com.yiqqi.test.ui.list.BeerListFragment"
+        android:name="com.yiqqi.beers.ui.list.BeerListFragment"
         android:label="asdfsdas"
         tools:layout="@layout/fragment_beer_list">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/beer_detail"
-        android:name="com.yiqqi.test.ui.detail.BeerDetailFragment"
+        android:name="com.yiqqi.beers.ui.detail.BeerDetailFragment"
         android:label="select_epg"
         tools:layout="@layout/fragment_beer_detail">
         <argument

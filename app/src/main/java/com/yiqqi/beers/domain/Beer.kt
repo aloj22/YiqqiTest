@@ -1,4 +1,4 @@
-package com.yiqqi.test.domain
+package com.yiqqi.beers.domain
 
 data class Beer(
     val id: Long,

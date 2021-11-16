@@ -1,15 +1,21 @@
-package com.yiqqi.test.ui.list
+package com.yiqqi.beers.ui.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.yiqqi.test.domain.Beer
-import com.yiqqi.test.util.LiveEvent
+import androidx.lifecycle.viewModelScope
+import com.yiqqi.beers.data.BeerRepository
+import com.yiqqi.beers.domain.Beer
+import com.yiqqi.beers.util.LiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class BeerListViewModel @Inject constructor() : ViewModel() {
+class BeerListViewModel @Inject constructor(
+    private val repository: BeerRepository
+) : ViewModel() {
 
 
 
@@ -21,13 +27,13 @@ class BeerListViewModel @Inject constructor() : ViewModel() {
 
 
     init {
-        val l = mutableListOf<Beer>()
+        /*val l = mutableListOf<Beer>()
         repeat(50) {
             l.add(Beer(
                 0,
-                "1",
+                "Punk IPA 2007 - 2010",
                 "asdfsdfasdf",
-                "taglineeee",
+                "Post Modern Classic. Spiky. Tropical. Hoppy.",
                 "https://images.punkapi.com/v2/192.png",
                 3f,
                 6f,
@@ -35,7 +41,16 @@ class BeerListViewModel @Inject constructor() : ViewModel() {
                 true
             ))
         }
-        _beers.value = l
+        _beers.value = l*/
+
+
+        viewModelScope.launch {
+            repository.getBeers().collect {
+                _beers.value = it
+            }
+        }
+
+
     }
 
 

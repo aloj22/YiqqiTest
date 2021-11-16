@@ -10,12 +10,15 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.yiqqi.test"
+        applicationId "com.yiqqi.beers"
         minSdk 26
         targetSdk 31
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+
+        buildConfigField "String", "BASE_API_URL", "\"https://api.punkapi.com/\""
     }
 
     buildTypes {
@@ -40,6 +43,8 @@ android {
 def navigationVersion = "2.3.5"
 def hiltVersion = "2.40.1"
 def glideVersion = "4.11.0"
+def retrofitVersion = "2.6.1"
+def okhttpVersion = "4.9.0"
 
 dependencies {
 
@@ -54,9 +59,17 @@ dependencies {
 
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
     implementation "com.google.dagger:hilt-android:$hiltVersion"
     kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
-    api "com.github.bumptech.glide:glide:$glideVersion"
+
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
     kapt "com.github.bumptech.glide:compiler:$glideVersion"
+
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
 
 }

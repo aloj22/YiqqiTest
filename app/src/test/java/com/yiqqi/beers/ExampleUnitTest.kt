@@ -1,4 +1,4 @@
-package com.yiqqi.test
+package com.yiqqi.beers
 
 import org.junit.Test
 

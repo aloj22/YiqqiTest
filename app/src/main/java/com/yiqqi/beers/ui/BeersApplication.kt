@@ -1,4 +1,4 @@
-package com.yiqqi.test.ui
+package com.yiqqi.beers.ui
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

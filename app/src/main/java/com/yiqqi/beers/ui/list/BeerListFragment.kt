@@ -1,4 +1,4 @@
-package com.yiqqi.test.ui.list
+package com.yiqqi.beers.ui.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.yiqqi.test.R
-import com.yiqqi.test.databinding.FragmentBeerListBinding
-import com.yiqqi.test.util.setItemOffset
+import com.yiqqi.beers.R
+import com.yiqqi.beers.databinding.FragmentBeerListBinding
+import com.yiqqi.beers.util.setItemOffset
 import dagger.hilt.android.AndroidEntryPoint
 
 

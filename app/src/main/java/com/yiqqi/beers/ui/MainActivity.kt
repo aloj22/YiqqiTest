@@ -1,11 +1,8 @@
-package com.yiqqi.test.ui
+package com.yiqqi.beers.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
-import com.yiqqi.test.R
-import com.yiqqi.test.databinding.ActivityMainBinding
+import com.yiqqi.beers.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
