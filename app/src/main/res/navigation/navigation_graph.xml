@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/beer_list">
+
+    <fragment
+        android:id="@+id/beer_list"
+        android:name="com.yiqqi.test.ui.list.BeerListFragment"
+        android:label="asdfsdas"
+        tools:layout="@layout/fragment_beer_list">
+        <action
+            android:id="@+id/open_beer_detail"
+            app:destination="@id/beer_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/beer_detail"
+        android:name="com.yiqqi.test.ui.detail.BeerDetailFragment"
+        android:label="select_epg"
+        tools:layout="@layout/fragment_beer_detail">
+        <argument
+            android:name="beer_id"
+            app:argType="long" />
+    </fragment>
+
+</navigation>
