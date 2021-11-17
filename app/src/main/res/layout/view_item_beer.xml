@@ -46,6 +46,7 @@
             android:text="@string/beer_detail_unavailable"
             android:textColor="@color/yellow"
             android:visibility="gone"
+            app:textAllCaps="true"
             app:layout_constraintBottom_toBottomOf="@id/image"
             app:layout_constraintEnd_toEndOf="@id/image"
             app:layout_constraintStart_toStartOf="@id/image"

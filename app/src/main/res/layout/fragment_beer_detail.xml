@@ -9,7 +9,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/margin_default">
+        android:paddingHorizontal="@dimen/margin_default"
+        android:paddingTop="@dimen/margin_default"
+        android:paddingBottom="@dimen/margin_big">
 
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -27,6 +29,7 @@
             android:rotation="-30"
             android:text="@string/beer_detail_unavailable"
             android:alpha="0"
+            app:textAllCaps="true"
             app:layout_constraintBottom_toBottomOf="@id/image"
             app:layout_constraintEnd_toEndOf="@id/image"
             app:layout_constraintStart_toStartOf="@id/image"
@@ -115,6 +118,13 @@
             app:layout_constraintStart_toStartOf="@id/ibu_title"
             app:layout_constraintTop_toBottomOf="@id/ibu_title" />
 
+
+        <androidx.compose.ui.platform.ComposeView
+            android:id="@+id/my_composable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_big"
+            app:layout_constraintTop_toBottomOf="@id/abv"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

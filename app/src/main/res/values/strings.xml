@@ -10,5 +10,6 @@
     <string name="beer_detail_set_available">Set available</string>
     <string name="beer_detail_set_unavailable">Set unavailable</string>
     <string name="beer_detail_unavailable">Unavailable</string>
+    <string name="beer_detail_pairing_food">Pairing Food</string>
 
 </resources>
