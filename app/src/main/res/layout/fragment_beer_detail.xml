@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,12 +26,12 @@
             android:layout_height="wrap_content"
             android:rotation="-30"
             android:text="@string/beer_detail_unavailable"
-            android:visibility="gone"
+            android:alpha="0"
             app:layout_constraintBottom_toBottomOf="@id/image"
             app:layout_constraintEnd_toEndOf="@id/image"
             app:layout_constraintStart_toStartOf="@id/image"
             app:layout_constraintTop_toTopOf="@id/image"
-            tools:visibility="visible" />
+            tools:alpha="1" />
 
 
         <androidx.appcompat.widget.AppCompatButton
@@ -58,7 +59,6 @@
             style="@style/Tagline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_big"
             android:gravity="center_horizontal"
             app:layout_constraintTop_toBottomOf="@id/name"
             tools:text="Post Modern Classic. Spiky. Tropical. Hoppy." />
@@ -68,7 +68,7 @@
             style="@style/Content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_big"
             android:gravity="center_horizontal"
             app:layout_constraintTop_toBottomOf="@id/tagline"
             tools:text="Our flagship beer that kick started the craft beer revolution. This is James and Martin's original take on an American IPA, subverted with punchy New Zealand hops. Layered with new world hops to create an all-out riot of grapefruit, pineapple and lychee before a spiky, mouth-puckering bitter finish." />

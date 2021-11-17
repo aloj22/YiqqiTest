@@ -43,18 +43,18 @@ class BeerDetailViewModel @Inject constructor(
     private val _foodPairing = MutableLiveData<List<String>>()
     val foodPairing: LiveData<List<String>> get() = _foodPairing
 
-    private val _showAvailable = MutableLiveData<Boolean>()
-    val showAvailable: LiveData<Boolean> get() = _showAvailable
+    private val _showAvailable = MutableLiveData<ShowAvailableInfo>()
+    val showAvailable: LiveData<ShowAvailableInfo> get() = _showAvailable
 
 
     private var currentBeer: Beer? = null
+    private var firstLoad = true
 
 
     init {
         viewModelScope.launch {
             getBeerUseCase.getBeer(beerId).filterNotNull().collect(::updateBeer)
         }
-
     }
 
 
@@ -76,7 +76,10 @@ class BeerDetailViewModel @Inject constructor(
         _abv.value =  beer.abv
         _ibu.value = beer.ibu.toString()
         _foodPairing.value = beer.foodPairing
-        _showAvailable.value = beer.available
+        _showAvailable.value = ShowAvailableInfo(beer.available, !firstLoad)
+        firstLoad = false
     }
 
 }
+
+data class ShowAvailableInfo(val available: Boolean, val animate: Boolean)

@@ -72,11 +72,21 @@ class BeerDetailFragment : Fragment() {
             }
 
             showAvailable.observe(viewLifecycleOwner) {
-                binding.unavailableText.visibility = if (it) View.GONE else View.VISIBLE
-                binding.availabilityButton.text = getString(if (it) R.string.beer_detail_set_unavailable else R.string.beer_detail_set_available)
-                binding.image.alpha = if (it) 1f else 0.5f
+                binding.availabilityButton.text = getString(if (it.available) R.string.beer_detail_set_unavailable else R.string.beer_detail_set_available)
+                changeViewAlpha(binding.image, if (it.available) 1f else 0.5f, it.animate)
+                changeViewAlpha(binding.unavailableText, if (it.available) 0f else 1f, it.animate)
             }
 
+        }
+    }
+
+    private fun changeViewAlpha(view: View, desiredAlpha: Float, animate: Boolean) {
+        view.run {
+            if (animate) {
+                animate().alpha(desiredAlpha).start()
+            } else {
+                alpha = desiredAlpha
+            }
         }
     }
 

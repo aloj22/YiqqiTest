@@ -8,11 +8,14 @@
     <fragment
         android:id="@+id/beer_list"
         android:name="com.yiqqi.beers.ui.list.BeerListFragment"
-        android:label="asdfsdas"
         tools:layout="@layout/fragment_beer_list">
         <action
             android:id="@+id/open_beer_detail"
-            app:destination="@id/beer_detail" />
+            app:destination="@id/beer_detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 
     <fragment
