@@ -15,6 +15,14 @@ class BeerRepositoryImpl(
 ) : BeerRepository {
 
 
+    companion object {
+        private const val FIRST_PAGE = 1
+        private const val PAGES_TO_SHOW = 2
+        private const val PAGE_SIZE = 50
+    }
+
+
+
     override suspend fun getBeer(beerId: Long): Flow<Beer?> {
 
         // Update beer async
@@ -43,10 +51,17 @@ class BeerRepositoryImpl(
     }
 
     private suspend fun updateBeers() {
-        remoteSource.getBeers(1, 79)?.let {
+        repeat(PAGES_TO_SHOW) {
+            updateBeersPage(it + FIRST_PAGE)
+        }
+    }
+
+    private suspend fun updateBeersPage(page: Int) {
+        remoteSource.getBeers(page, PAGE_SIZE)?.let {
             localSource.updateBeers(it)
         }
     }
+
 
     private suspend fun updateBeer(beerId: Long) {
         remoteSource.getBeer(beerId)?.let {

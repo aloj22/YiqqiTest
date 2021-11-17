@@ -13,7 +13,7 @@ object ApiServiceGenerator {
         .baseUrl(BuildConfig.BASE_API_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .client(OkHttpClient.Builder().apply {
-            addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+            addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC))
         }.build())
         .build().create(ApiService::class.java)
 

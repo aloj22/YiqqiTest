@@ -16,6 +16,13 @@ class BeerListViewModel @Inject constructor(
 ) : ViewModel() {
 
 
+    /*companion object {
+
+        private const val MAX_ITEMS_TO_SHOW = 100
+        private const val PAGE_SIZE = 50
+
+    }*/
+
 
     private val _beers = MutableLiveData<List<Beer>>()
     val beers: LiveData<List<Beer>> get() = _beers
@@ -23,6 +30,7 @@ class BeerListViewModel @Inject constructor(
     private val _goToBeerDetail = LiveEvent<Long>()
     val goToBeerDetail: LiveData<Long> get() = _goToBeerDetail
 
+    //private var currentPage = 1
 
     init {
         viewModelScope.launch {

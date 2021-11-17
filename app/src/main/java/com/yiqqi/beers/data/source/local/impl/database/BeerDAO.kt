@@ -12,7 +12,6 @@ interface BeerDAO {
 
 
 
-
     @Transaction
     @Query("SELECT * FROM ${BeerItemDB.TABLE_NAME} WHERE id LIKE :beerId")
     fun getBeer(beerId: Long): Flow<BeerItemAvailability?>
@@ -27,13 +26,6 @@ interface BeerDAO {
     suspend fun insertBeer(beer: BeerItemDB)
 
 
-    @Transaction
-    suspend fun updateBeers(beers: List<BeerItemDB>) {
-        deleteBeers()
-        insertBeers(beers)
-    }
-
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertBeers(channels: List<BeerItemDB>)
 
@@ -44,9 +36,5 @@ interface BeerDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun updateBeerAvailability(beerAvailabilityDB: BeerAvailabilityDB)
-
-
-    /*@Query("INSERT INTO Person (name, phone) VALUES (:name, :phone) ON CONFLICT (name) DO UPDATE SET phone=excluded.phone")
-    fun upsert(name: String, phone: String)*/
 
 }
