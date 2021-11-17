@@ -2,11 +2,11 @@ package com.yiqqi.beers.di
 
 import com.yiqqi.beers.data.BeerRepository
 import com.yiqqi.beers.data.impl.BeerRepositoryImpl
-import com.yiqqi.beers.data.source.network.NetworkSource
-import com.yiqqi.beers.data.source.network.impl.ApiMapper
-import com.yiqqi.beers.data.source.network.impl.ApiService
-import com.yiqqi.beers.data.source.network.impl.ApiServiceGenerator
-import com.yiqqi.beers.data.source.network.impl.NetworkSourceImpl
+import com.yiqqi.beers.data.source.remote.RemoteSource
+import com.yiqqi.beers.data.source.remote.impl.ApiMapper
+import com.yiqqi.beers.data.source.remote.impl.ApiService
+import com.yiqqi.beers.data.source.remote.impl.ApiServiceGenerator
+import com.yiqqi.beers.data.source.remote.impl.RemoteSourceImpl
 import com.yiqqi.beers.util.dispatcherprovider.DispatcherProvider
 import dagger.Module
 import dagger.Provides
@@ -22,8 +22,8 @@ object DataHiltModule {
     @Provides
     @Singleton
     fun provideRepository(
-        networkSource: NetworkSource
-    ): BeerRepository = BeerRepositoryImpl(networkSource)
+        remoteSource: RemoteSource
+    ): BeerRepository = BeerRepositoryImpl(remoteSource)
 
 
     @Provides
@@ -31,7 +31,7 @@ object DataHiltModule {
         apiService: ApiService,
         apiMapper: ApiMapper,
         dispatcherProvider: DispatcherProvider
-    ): NetworkSource = NetworkSourceImpl(apiService, apiMapper, dispatcherProvider)
+    ): RemoteSource = RemoteSourceImpl(apiService, apiMapper, dispatcherProvider)
 
 
     @Provides

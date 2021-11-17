@@ -1,4 +1,4 @@
-package com.yiqqi.beers.data.source.network.impl
+package com.yiqqi.beers.data.source.remote.impl
 
 import com.yiqqi.beers.BuildConfig
 import okhttp3.OkHttpClient

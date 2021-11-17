@@ -1,16 +1,16 @@
-package com.yiqqi.beers.data.source.network.impl
+package com.yiqqi.beers.data.source.remote.impl
 
-import com.yiqqi.beers.data.source.network.NetworkSource
+import com.yiqqi.beers.data.source.remote.RemoteSource
 import com.yiqqi.beers.util.dispatcherprovider.DispatcherProvider
 import kotlinx.coroutines.withContext
 
 
 
-class NetworkSourceImpl(
+class RemoteSourceImpl(
     private val apiService: ApiService,
     private val apiMapper: ApiMapper,
     private val dispatcherProvider: DispatcherProvider
-) : NetworkSource {
+) : RemoteSource {
 
 
     override suspend fun getBeer(beerId: Long) = withContext(dispatcherProvider.ioDispatcher) {

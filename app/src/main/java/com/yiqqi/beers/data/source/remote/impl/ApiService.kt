@@ -1,8 +1,7 @@
-package com.yiqqi.beers.data.source.network.impl
+package com.yiqqi.beers.data.source.remote.impl
 
-import com.yiqqi.beers.data.source.network.model.BeerResponse
+import com.yiqqi.beers.data.source.remote.model.BeerResponse
 import retrofit2.http.GET
-import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
 

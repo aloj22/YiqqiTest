@@ -1,8 +1,8 @@
-package com.yiqqi.beers.data.source.network
+package com.yiqqi.beers.data.source.remote
 
 import com.yiqqi.beers.domain.Beer
 
-interface NetworkSource {
+interface RemoteSource {
 
     suspend fun getBeer(beerId: Long): Beer?
 

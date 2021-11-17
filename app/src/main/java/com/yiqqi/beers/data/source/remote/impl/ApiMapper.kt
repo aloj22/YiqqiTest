@@ -1,6 +1,6 @@
-package com.yiqqi.beers.data.source.network.impl
+package com.yiqqi.beers.data.source.remote.impl
 
-import com.yiqqi.beers.data.source.network.model.BeerResponse
+import com.yiqqi.beers.data.source.remote.model.BeerResponse
 import com.yiqqi.beers.domain.Beer
 
 class ApiMapper {

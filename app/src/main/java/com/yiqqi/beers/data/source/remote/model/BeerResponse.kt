@@ -1,4 +1,4 @@
-package com.yiqqi.beers.data.source.network.model
+package com.yiqqi.beers.data.source.remote.model
 
 import com.google.gson.annotations.SerializedName
 
