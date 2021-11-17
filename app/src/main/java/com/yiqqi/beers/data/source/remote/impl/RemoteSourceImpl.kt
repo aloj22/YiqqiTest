@@ -28,7 +28,7 @@ class RemoteSourceImpl(
             apiService.getBeers(page, count).map(apiMapper::beerFromBeerResponse)
         } catch (e: Exception) {
             e.printStackTrace()
-            emptyList()
+            null
         }
     }
 

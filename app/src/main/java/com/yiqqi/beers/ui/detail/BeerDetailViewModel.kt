@@ -3,6 +3,7 @@ package com.yiqqi.beers.ui.detail
 import androidx.lifecycle.*
 import com.yiqqi.beers.domain.Beer
 import com.yiqqi.beers.usecase.GetBeerUseCase
+import com.yiqqi.beers.usecase.SetBeerAvailableUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.filterNotNull
@@ -16,6 +17,7 @@ import javax.inject.Named
 class BeerDetailViewModel @Inject constructor(
     @Named("beerId") private val beerId: Long,
     private val getBeerUseCase: GetBeerUseCase,
+    private val setBeerAvailableUseCase: SetBeerAvailableUseCase,
 ) : ViewModel() {
 
 
@@ -41,15 +43,32 @@ class BeerDetailViewModel @Inject constructor(
     private val _foodPairing = MutableLiveData<List<String>>()
     val foodPairing: LiveData<List<String>> get() = _foodPairing
 
+    private val _showAvailable = MutableLiveData<Boolean>()
+    val showAvailable: LiveData<Boolean> get() = _showAvailable
+
+
+    private var currentBeer: Beer? = null
+
 
     init {
         viewModelScope.launch {
-            getBeerUseCase.getBeer(beerId).filterNotNull().collect(::displayBeer)
+            getBeerUseCase.getBeer(beerId).filterNotNull().collect(::updateBeer)
+        }
+
+    }
+
+
+    fun toggleBeerAvailability() {
+        currentBeer?.let {
+            viewModelScope.launch {
+                setBeerAvailableUseCase.setBeerAvailable(it.id, !it.available)
+            }
         }
     }
 
 
-    private fun displayBeer(beer: Beer) {
+    private fun updateBeer(beer: Beer) {
+        currentBeer = beer
         _name.value = beer.name
         _description.value = beer.description
         _image.value = beer.image
@@ -57,6 +76,7 @@ class BeerDetailViewModel @Inject constructor(
         _abv.value =  beer.abv
         _ibu.value = beer.ibu.toString()
         _foodPairing.value = beer.foodPairing
+        _showAvailable.value = beer.available
     }
 
 }

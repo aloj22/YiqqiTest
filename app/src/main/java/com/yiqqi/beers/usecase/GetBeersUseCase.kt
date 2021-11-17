@@ -5,6 +5,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface GetBeersUseCase {
 
-    fun getBeers(): Flow<List<Beer>>
+    suspend fun getBeers(): Flow<List<Beer>>
 
 }

@@ -37,7 +37,9 @@ class BeerDetailFragment : Fragment() {
     }
 
     private fun setUpViews() {
-
+        binding.availabilityButton.setOnClickListener {
+            viewModel.toggleBeerAvailability()
+        }
     }
 
     private fun observeViewModel() {
@@ -66,7 +68,13 @@ class BeerDetailFragment : Fragment() {
             }
 
             abv.observe(viewLifecycleOwner) {
-                binding.abv.text = getString(R.string.abv_percentage, it.toString())
+                binding.abv.text = getString(R.string.beer_detail_abv_percentage, it.toString())
+            }
+
+            showAvailable.observe(viewLifecycleOwner) {
+                binding.unavailableText.visibility = if (it) View.GONE else View.VISIBLE
+                binding.availabilityButton.text = getString(if (it) R.string.beer_detail_set_unavailable else R.string.beer_detail_set_available)
+                binding.image.alpha = if (it) 1f else 0.5f
             }
 
         }

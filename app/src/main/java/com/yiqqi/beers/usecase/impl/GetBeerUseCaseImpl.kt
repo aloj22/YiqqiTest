@@ -6,6 +6,6 @@ import com.yiqqi.beers.usecase.GetBeersUseCase
 
 class GetBeerUseCaseImpl(private val beerRepository: BeerRepository) : GetBeerUseCase {
 
-    override fun getBeer(beerId: Long) = beerRepository.getBeer(beerId)
+    override suspend fun getBeer(beerId: Long) = beerRepository.getBeer(beerId)
 
 }

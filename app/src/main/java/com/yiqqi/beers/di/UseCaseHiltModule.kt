@@ -3,8 +3,10 @@ package com.yiqqi.beers.di
 import com.yiqqi.beers.data.BeerRepository
 import com.yiqqi.beers.usecase.GetBeerUseCase
 import com.yiqqi.beers.usecase.GetBeersUseCase
+import com.yiqqi.beers.usecase.SetBeerAvailableUseCase
 import com.yiqqi.beers.usecase.impl.GetBeerUseCaseImpl
 import com.yiqqi.beers.usecase.impl.GetBeersUseCaseImpl
+import com.yiqqi.beers.usecase.impl.SetBeerAvailableUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,6 +26,11 @@ object UseCaseHiltModule {
     fun provideGetBeersUseCase(
         beerRepository: BeerRepository
     ): GetBeersUseCase = GetBeersUseCaseImpl(beerRepository)
+
+    @Provides
+    fun provideSetBeerAvailableUseCase(
+        beerRepository: BeerRepository
+    ): SetBeerAvailableUseCase = SetBeerAvailableUseCaseImpl(beerRepository)
 
 
 }

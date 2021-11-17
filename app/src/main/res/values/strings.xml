@@ -3,8 +3,12 @@
 
 
 
-    <string name="ibu">Amargor</string>
-    <string name="abv">Alcohol</string>
-    <string name="abv_percentage">%s%%</string>
+    <string name="beer_detail_ibu">Amargor</string>
+    <string name="beer_detail_abv">Alcohol</string>
+    <string name="beer_detail_abv_percentage">%s%%</string>
+
+    <string name="beer_detail_set_available">Set available</string>
+    <string name="beer_detail_set_unavailable">Set unavailable</string>
+    <string name="beer_detail_unavailable">Unavailable</string>
 
 </resources>

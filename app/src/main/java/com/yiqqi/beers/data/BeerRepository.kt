@@ -5,8 +5,10 @@ import kotlinx.coroutines.flow.Flow
 
 interface BeerRepository {
 
-    fun getBeer(beerId: Long): Flow<Beer?>
+    suspend fun getBeer(beerId: Long): Flow<Beer?>
 
-    fun getBeers(): Flow<List<Beer>>
+    suspend fun getBeers(): Flow<List<Beer>>
+
+    suspend fun setBeerAvailability(beerId: Long, available: Boolean)
 
 }

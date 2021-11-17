@@ -30,4 +30,16 @@
         <item name="android:textSize">@dimen/text_size_small</item>
     </style>
 
+
+
+    <style name="Title.Accent">
+        <item name="android:textSize">@dimen/text_size_extra_big</item>
+        <item name="android:textColor">@color/yellow</item>
+    </style>
+
+    <style name="Title.Accent.Small">
+        <item name="android:textSize">@dimen/text_size_normal_2</item>
+    </style>
+
+
 </resources>

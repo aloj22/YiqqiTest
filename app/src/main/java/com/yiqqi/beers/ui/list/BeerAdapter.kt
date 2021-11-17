@@ -1,6 +1,7 @@
 package com.yiqqi.beers.ui.list
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -56,6 +57,8 @@ class BeerAdapter(
 
                 name.text = beer.name
                 tagline.text = beer.tagline
+                unavailableText.visibility = if (beer.available) View.GONE else View.VISIBLE
+                binding.image.alpha = if (beer.available) 1f else 0.5f
 
                 Glide.with(image)
                     .load(beer.image)

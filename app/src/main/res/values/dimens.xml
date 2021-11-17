@@ -4,8 +4,10 @@
     <dimen name="margin_default">12dp</dimen>
     <dimen name="margin_big">30dp</dimen>
 
-    <dimen name="text_size_big">32sp</dimen>
     <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="text_size_normal_2">20sp</dimen>
+    <dimen name="text_size_big">32sp</dimen>
+    <dimen name="text_size_extra_big">48sp</dimen>
     <dimen name="text_size_small">14sp</dimen>
 
 

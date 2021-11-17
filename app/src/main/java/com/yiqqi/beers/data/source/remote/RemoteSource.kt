@@ -6,6 +6,6 @@ interface RemoteSource {
 
     suspend fun getBeer(beerId: Long): Beer?
 
-    suspend fun getBeers(page: Int, count: Int): List<Beer>
+    suspend fun getBeers(page: Int, count: Int): List<Beer>?
 
 }
