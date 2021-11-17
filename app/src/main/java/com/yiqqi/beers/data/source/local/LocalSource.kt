@@ -6,9 +6,9 @@ import kotlinx.coroutines.flow.Flow
 interface LocalSource {
 
 
-    fun getBeers(): Flow<List<Beer>>
+    suspend fun getBeers(): Flow<List<Beer>>
 
-    fun getBeer(beerId: Long): Flow<Beer?>
+    suspend fun getBeer(beerId: Long): Flow<Beer?>
 
     suspend fun updateBeers(beers: List<Beer>)
 

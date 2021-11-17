@@ -67,8 +67,9 @@ object DataHiltModule {
     @Provides
     fun provideLocalSource(
         beerDAO: BeerDAO,
-        localSourceMapper: LocalSourceMapper
-    ): LocalSource = LocalSourceImpl(beerDAO, localSourceMapper)
+        localSourceMapper: LocalSourceMapper,
+        dispatcherProvider: DispatcherProvider
+    ): LocalSource = LocalSourceImpl(beerDAO, localSourceMapper, dispatcherProvider)
 
 
     @Provides
