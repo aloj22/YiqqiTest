@@ -3,11 +3,15 @@ package com.yiqqi.beers.ui.list
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.yiqqi.beers.R
 import com.yiqqi.beers.databinding.ViewItemBeerBinding
 import com.yiqqi.beers.domain.Beer
+
+
 
 class BeerAdapter(
     private val beers: MutableList<Beer> = mutableListOf(),
@@ -65,8 +69,12 @@ class BeerAdapter(
                     .centerInside()
                     .into(image)
 
-                root.setOnClickListener {
-                    onBeerClicked(beer)
+
+                root.run {
+                    setBackgroundColor(ContextCompat.getColor(root.context, if (beer.available) R.color.white else R.color.grey))
+                    setOnClickListener {
+                        onBeerClicked(beer)
+                    }
                 }
             }
         }

@@ -21,7 +21,6 @@
     <fragment
         android:id="@+id/beer_detail"
         android:name="com.yiqqi.beers.ui.detail.BeerDetailFragment"
-        android:label="select_epg"
         tools:layout="@layout/fragment_beer_detail">
         <argument
             android:name="beer_id"
