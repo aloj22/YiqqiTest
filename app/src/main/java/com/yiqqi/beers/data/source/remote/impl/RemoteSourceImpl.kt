@@ -25,7 +25,7 @@ class RemoteSourceImpl(
 
     override suspend fun getBeers(page: Int, count: Int) = withContext(dispatcherProvider.ioDispatcher) {
         try {
-            apiService.getBeers(page, count).map(apiMapper::beerFromBeerResponse)
+            apiMapper.beersFromBeerResponse(apiService.getBeers(page, count))
         } catch (e: Exception) {
             e.printStackTrace()
             null

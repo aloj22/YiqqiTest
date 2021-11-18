@@ -27,7 +27,7 @@ class LocalSourceImpl(
 
 
     override suspend fun updateBeers(beers: List<Beer>) = withContext(dispatcherProvider.cpuDispatcher) {
-        beerDAO.insertBeers(beers.map(localSourceMapper::beerItemDBFromBeer))
+        beerDAO.insertBeers(localSourceMapper.beersItemDBFromBeerList(beers))
     }
 
 

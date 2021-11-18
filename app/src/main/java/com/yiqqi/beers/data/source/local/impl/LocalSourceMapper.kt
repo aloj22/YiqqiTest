@@ -32,4 +32,7 @@ class LocalSourceMapper {
         beer.foodPairing,
     )
 
+    fun beersItemDBFromBeerList(beers: List<Beer>) = beers.map(::beerItemDBFromBeer)
+
+
 }

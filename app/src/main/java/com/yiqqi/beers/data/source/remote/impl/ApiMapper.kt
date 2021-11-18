@@ -17,4 +17,6 @@ class ApiMapper {
         true //Review this
     )
 
+    fun beersFromBeerResponse(beersResponse: List<BeerResponse>) = beersResponse.map(::beerFromBeerResponse)
+
 }
