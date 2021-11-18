@@ -58,6 +58,9 @@ class BeerDetailViewModel @Inject constructor(
     }
 
 
+    /**
+     * Toggle current beer availability
+     */
     fun toggleBeerAvailability() {
         currentBeer?.let {
             viewModelScope.launch {

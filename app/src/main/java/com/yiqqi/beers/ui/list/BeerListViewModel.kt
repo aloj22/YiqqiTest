@@ -32,6 +32,10 @@ class BeerListViewModel @Inject constructor(
     }
 
 
+    /**
+     * Open beer detail
+     * @param beer Beer
+     */
     fun onBeerClicked(beer: Beer) {
         _goToBeerDetail.value = beer.id
     }
