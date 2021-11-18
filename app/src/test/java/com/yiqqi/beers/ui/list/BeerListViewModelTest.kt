@@ -38,10 +38,14 @@ class BeerListViewModelTest {
 
     @Test
     fun `Should set beers values on init`() {
-        val beersObserver = mock<Observer<List<Beer>>>()
-        beerDetailViewModel.beers.observeForever(beersObserver)
-        verify(beersObserver).onChanged(eq(beers))
+        runBlocking {
+            val beersObserver = mock<Observer<List<Beer>>>()
+            beerDetailViewModel.beers.observeForever(beersObserver)
+            verify(beersObserver).onChanged(eq(beers))
+            verify(getBeersUseCase).getBeers()
+        }
     }
+
 
     @Test
     fun `Should open beer details`() {
